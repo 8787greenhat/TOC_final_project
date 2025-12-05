@@ -1,9 +1,13 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # 載入 .env 檔案
 
 # 設定
 API_URL = "https://api-gateway.netdb.csie.ncku.edu.tw/api/tags"
-API_KEY = "1225a801f113ae85166278b1ecee014a3654903b20a91bf5882c6cd7ee753da7"
+API_KEY = os.getenv("API_KEY")
 
 headers = {
     "Authorization": f"Bearer {API_KEY}",
